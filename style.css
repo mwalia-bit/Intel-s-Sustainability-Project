@@ -14,7 +14,7 @@ body {
 
 /* Hero Section */
 header {
-  background: linear-gradient(135deg, #0071c5, #003c71);
+  background-color: #18649e;  /* Intel Blue */
   color: white;
   padding: 3rem 1rem;
   text-align: center;
@@ -47,7 +47,8 @@ section {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory; /* smooth snap scrolling */
+  scroll-behavior: smooth;
   padding: 2rem 1rem;
 }
 
@@ -55,7 +56,8 @@ section {
   flex: 0 0 260px;
   position: relative;
   border-radius: 10px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h2 {
@@ -68,7 +70,7 @@ section {
 .card-inner {
   position: relative;
   width: 100%;
-  height: 280px;      /* fixed height for consistency */
+  height: 280px; /* fixed height for consistency */
   perspective: 1000px;
 }
 
@@ -88,7 +90,7 @@ section {
 .card-front img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills card cleanly */
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -111,6 +113,12 @@ section {
 
 .card:hover .card-back {
   transform: rotateY(0deg);
+}
+
+/* Extra transform effect for LevelUp */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* Footer Note */
@@ -151,9 +159,18 @@ footer nav a:hover {
 .footer-social {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+}
+
+.footer-social a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #0071c5;
 }
 
 .footer-bottom {
@@ -187,4 +204,3 @@ footer nav a:hover {
     width: 100%;
   }
 }
-
